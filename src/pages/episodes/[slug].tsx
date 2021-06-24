@@ -2,6 +2,7 @@ import { format, parseISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Image from 'next/image';
+import Head from 'next/head';
 import Link from 'next/link';
 import { usePlayer } from '../../contexts/PlayerContext';
 import { api } from '../../services/api';
@@ -33,6 +34,9 @@ export default function Episode({episode}: EpisodeProps){
     
     return (
         <div className={styles.episode}>
+            <Head>
+                <title>{episode.title} | PodCastr</title>
+            </Head>
             <div className={styles.thumbnailContainer}>
                 
                 
